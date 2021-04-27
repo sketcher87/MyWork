@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <body> 
+<script>
+var arr = [1,3,10,0,0,2,6];
+  
+    document.write("Original array: "+arr+"<br>");
+   
+    var moveEle1 = 3;
+     
+  
+    var moveToIndx1 = 5;
+    
+  
+    // If acctual index of moved element is 
+    // less than 0 when 'moveEle += array size'
+    while (moveEle1 < 0)
+    {
+        moveEle1 += arr.length;
+    }
+  
+    // Where the element to be moved f that 
+    // index is less than 0 when 
+    // 'moveToIndx += array size'
+    while (moveToIndx1 < 0) 
+    {
+        moveToIndx1 = moveToIndx1 + arr.length;
+    }
+  
+    
+    if (moveToIndx1 >= arr.length)
+    {
+        var un = moveToIndx1 - arr.length + 1;
+        while (un--)
+        {
+            arr.push(undefined);
+  
+        }
+    }
+    
+    arr.splice(moveToIndx1, 0, arr.splice(moveEle1, 2));
+      
+    document.write("<br>After move: "+arr+"<br>");
+    </script>
+    
+
+
+</body>
+</html>
